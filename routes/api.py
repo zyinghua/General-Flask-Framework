@@ -2,7 +2,7 @@ from flask import Blueprint
 from routes.entry1 import entry1
 from routes.entry2 import entry2
 
-api = Blueprint('api', __name__)
+api = Blueprint('api', __name__)  # This will be imported by parent node for registration
 
 """A Blueprint can also register another blueprints, like sub-trees."""
 api.register_blueprint(entry1, url_prefix="/entry1")
