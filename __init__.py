@@ -24,7 +24,6 @@ def create_app():
 
     """---------------------------------"""
     """An example of registering a route"""
-    """      Delete if not needed.      """
     """  Access this route: {BASE URL}  """
     @app.route('/')
     def index():
