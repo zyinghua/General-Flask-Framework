@@ -9,7 +9,7 @@ api.register_blueprint(entry1, url_prefix="/entry1")
 api.register_blueprint(entry2, url_prefix="/entry2")
 
 
-@api.route('/', methods=['GET', 'POST', 'DELETE', 'UPDATE'])  # define HTTP methods for this function/end point
+@api.route('/', methods=['GET', 'POST', 'DELETE', 'PUT'])  # define HTTP methods for this function/end point
 def index():
     """
     define your REST-ful logic here...

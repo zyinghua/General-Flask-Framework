@@ -1,9 +1,11 @@
+"""Define your database structure here..."""
+
 from sqlalchemy import Integer, Column, String, DateTime, DECIMAL, Float
 from database import Base
 from dataclasses import dataclass
 
 
-@dataclass
+@dataclass  # Use of dataclass: https://stackoverflow.com/a/47955313/17454629
 class User(Base):
     """An example of declaring a class -> table using ORM (Object Relational Mapping)."""
     __tablename__ = 'User'
@@ -14,10 +16,3 @@ class User(Base):
     user_id = Column(Integer, primary_key=True)
     user_name = Column(String(50), unique=True)
     user_email = Column(String(120), unique=True)
-
-    def __init__(self, name=None, email=None):
-        self.user_name = name
-        self.user_email = email
-
-    def __repr__(self):
-        return f'<User {self.user_name!r}>'

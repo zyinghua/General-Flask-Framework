@@ -3,7 +3,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 """dialect+driver://username:password@host:port/database"""
-LOCAL_DB_URL = "mysql://...{Define your local database URL here...}"
+LOCAL_DB_URL = "mysql://root:Mysql07052022@localhost:3306/localdbtest"
 REMOTE_DB_URL = "mysql://...{Define your remote database URL here...}"
 
 engine = create_engine(LOCAL_DB_URL, pool_pre_ping=True)  # connect with the sql server
