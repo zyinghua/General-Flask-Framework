@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from routes.api import api  # import the Blueprint named as 'api'
+from database import db_session, init_db, drop_db
 
 
 def create_app():
@@ -33,6 +34,13 @@ def create_app():
         """
         return render_template('index.html')
     """---------------------------------"""
+
+    @app.teardown_appcontext
+    def shutdown_session(exception=None):
+        db_session.remove()
+
+    init_db()  # initialise the database
+    # drop_db()  # uncomment to drop the database
 
     return app
 
